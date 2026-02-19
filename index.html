@@ -76,46 +76,45 @@
       background: var(--cream);
     }
     .hero-grid{
-      display: grid;
-      grid-template-columns: 42% 58%;
-      align-items: stretch;
-      min-height: 520px;
-    }
+  display: grid;
+  grid-template-columns: 45% 55%; /* closer to your mock */
+  align-items: stretch;
+  min-height: 520px;
+}
 
     /* LEFT PANEL */
     .left{
-      background: var(--cream);
-      padding: 48px 34px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
+  background: var(--cream);
+  padding: 38px 34px 0; /* slightly less top padding */
+  display: flex;
+  flex-direction: column;
+}
 
     .headline{
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--navy);
-      font-size: 54px;
-      line-height: 1.02;
-      margin: 0 0 18px;
-      font-weight: 700;
-      text-align: center;
-    }
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--navy);
+  font-size: 56px;
+  line-height: 1.0;
+  margin: 0 0 18px;
+  font-weight: 700;
+  text-align: center;
+}
 
-    .subheadline{
-      margin: 0 0 26px;
-      text-align: center;
-      color: var(--yellow);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      line-height: 1.15;
-      font-weight: 600;
-    }
+.subheadline{
+  margin: 0 0 18px;      /* tighter */
+  text-align: center;
+  color: var(--yellow);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+}
 
-    .cta-wrap{
-      display:flex;
-      justify-content:center;
-      margin-bottom: 28px;
-    }
+.cta-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom: 18px;   /* tighter */
+}
 
     .cta-btn{
       display:inline-block;
@@ -132,11 +131,11 @@
 
     /* Yellow info strip */
     .info{
-      margin-top: auto;
-      background: #E2B13B; /* warm yellow block like your mock */
-      padding: 22px 22px 26px;
-      color: #0b1f2a;
-    }
+  margin-top: 18px;
+  background: #E2B13B;
+  padding: 22px 26px 26px;
+  color: #0b1f2a;
+}
     .info h3{
       margin: 0 0 10px;
       text-align:center;
@@ -156,15 +155,18 @@
 
     /* RIGHT IMAGE */
     .right{
-      background: var(--cream);
-      overflow: hidden;
-    }
-    .right img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
-    }
+  background: var(--cream);
+  overflow: hidden;
+  height: 100%;
+}
+
+.right img{
+  width: 100%;
+  height: 520px;          /* lock the image height to match the hero */
+  object-fit: cover;      /* fills without stretching */
+  object-position: 60% center;* keeps the subject centered */
+  display: block;
+}
 
     /* ===== RESPONSIVE (still keeps same vibe) ===== */
     @media (max-width: 900px){
@@ -210,24 +212,27 @@
       <section class="hero-grid">
 
         <!-- LEFT PANEL -->
-        <div class="left">
-          <h1 class="headline">Build Our Future<br/>With Clean<br/>Water</h1>
+<div class="left">
+  <h1 class="headline">Build Our Future<br/>With Clean<br/>Water</h1>
 
-          <p class="subheadline">See that your gift changes lives around<br/>the world.</p>
+  <p class="subheadline">See that your gift changes lives around<br/>the world.</p>
 
-          <div class="cta-wrap">
-            <a class="cta-btn" href="#">Start Tracking Your<br/>Donation</a>
-          </div>
+  <div class="cta-wrap">
+    <a class="cta-btn" href="#">Start Tracking Your<br/>Donation</a>
+  </div>
 
-          <div class="info">
-            <h3>Did you know?</h3>
-            <p>
-              $100 gives a family of four permanent<br/>
-              access to clean and safe drinking water,<br/>
-              so even $10 today makes a real difference.
-            </p>
-          </div>
-        </div>
+  <!-- THIS LINE pushes the info box toward the bottom -->
+  <div style="flex:1;"></div>
+
+  <div class="info">
+    <h3>Did you know?</h3>
+    <p>
+      $100 gives a family of four permanent<br/>
+      access to clean and safe drinking water,<br/>
+      so even $10 today makes a real difference.
+    </p>
+  </div>
+</div>
 
         <!-- RIGHT IMAGE -->
         <div class="right">
