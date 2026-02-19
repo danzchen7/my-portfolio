@@ -59,22 +59,26 @@
     }
 
     .brand{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
 
-    .brand .logo-dot{
-      width: 18px;
-      height: 18px;
-      background: var(--yellow);
-      border-radius: 4px;
-      flex: 0 0 auto;
-    }
+.brand-logo{
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.brand-text{
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
 
     .navlinks{
       display: flex;
@@ -290,9 +294,9 @@
   <header class="topbar">
     <div class="container">
       <a class="brand" href="#">
-        <span class="logo-dot" aria-hidden="true"></span>
-        charity: water
-      </a>
+  <img class="brand-logo" src="images/logo.png" alt="charity: water logo">
+  <span class="brand-text">charity: water</span>
+</a>
 
       <nav class="navlinks" aria-label="Primary">
         <a href="#story">Story</a>
