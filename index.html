@@ -10,255 +10,226 @@
       --navy: #003366;
       --cream: #FFF7E1;
       --yellow: #FFC907;
-      --text: #0f2233;
+      --infoYellow: #E2B13B;
     }
 
     *{ box-sizing: border-box; }
     body{
       margin: 0;
-      background: #ffffff;
-      color: var(--text);
+      background: #fff;
       font-family: "Proxima Nova", Avenir, Arial, sans-serif;
+      color: #0f2233;
     }
     img{ display:block; max-width:100%; }
 
     /* ===== TOP BAR ===== */
     .topbar{
       background: var(--navy);
-      padding: 24px 0;
+      padding: 16px 0; /* closer to your mock */
     }
+
     .topbar-inner{
-  width: min(1200px, 96%);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: nowrap;       /* keep everything on one line */
-}
+      width: 100%;
+      padding: 0 28px; /* keeps content off the edges */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: nowrap;
+    }
+
     .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      color:#fff;
-      text-decoration:none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #fff;
+      min-width: 320px; /* protects wordmark from shrinking */
     }
-    .brand img{
-  height: 60px;
-  width: auto;
-  flex: 0 0 auto;          /* don’t let it stretch/squeeze other items */
-}
+
+    .brand-logo{
+      height: 44px; /* logo size like your mock */
+      width: auto;
+      flex: 0 0 auto;
     }
-    .brand span{
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 40px;          /* increase if you want bigger */
-  letter-spacing: 0.12em;
-  font-weight: 500;
-  line-height: 1;
-  white-space: nowrap;      /* prevents “charity:” and “water” wrapping */
-}
+
+    .brand-text{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;       /* BIG wordmark like the mock */
+      letter-spacing: 0.12em;
+      line-height: 1;
+      white-space: nowrap;   /* keep on one line */
+      font-weight: 500;
+    }
 
     .topbar-right{
       font-family: Georgia, "Times New Roman", serif;
       color: var(--yellow);
-      font-size: 34px;
-      font-weight: 600;
+      font-size: 38px;       /* BIG like the mock */
+      font-weight: 700;
       letter-spacing: 0.02em;
       white-space: nowrap;
-      padding-right: 6px;
       text-align: right;
     }
 
-    /* ===== MAIN HERO LAYOUT ===== */
-    .main{
-      background: var(--cream);
-      padding: 0;
-    }
-    .frame{
-      width: min(1200px, 96%);
-      margin: 0 auto;
+    /* ===== HERO WRAP ===== */
+    .hero{
       background: var(--cream);
     }
+
     .hero-grid{
-  display: grid;
-  grid-template-columns: 45% 55%;
-  align-items: stretch;
-  min-height: 620px;   /* make the whole hero taller like the Canva mock */
-}
-
-.right{
-  overflow: hidden;
-  height: 100%;        /* fill the hero-grid height */
-}
-
-.right img{
-  width: 100%;
-  height: 100%;        /* IMPORTANT: fill the right column */
-  object-fit: cover;   /* crop instead of shrink */
-  object-position: center;
-  display: block;
-}
+      display: grid;
+      grid-template-columns: 44% 56%;
+      min-height: 620px; /* tall like your mock */
+      align-items: stretch;
+    }
 
     /* LEFT PANEL */
     .left{
-  background: var(--cream);
-  padding: 38px 34px 0; /* slightly less top padding */
-  display: flex;
-  flex-direction: column;
-}
+      background: var(--cream);
+      padding: 36px 34px 0;
+      display: flex;
+      flex-direction: column;
+    }
 
     .headline{
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--navy);
-  font-size: 56px;
-  line-height: 1.0;
-  margin: 0 0 18px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.subheadline{
-  margin: 0 0 18px;      /* tighter */
-  text-align: center;
-  color: var(--yellow);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.cta-wrap{
-  display:flex;
-  justify-content:center;
-  margin-bottom: 18px;   /* tighter */
-}
-
-    .cta-btn{
-      display:inline-block;
-      background: var(--navy);
-      color:#fff;
-      text-decoration:none;
-      padding: 18px 42px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 20px;
-      text-align:center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-
-    /* Yellow info strip */
-    .info{
-  margin-top: 18px;
-  background: #E2B13B;
-  padding: 22px 26px 26px;
-  color: #0b1f2a;
-}
-    .info h3{
-      margin: 0 0 10px;
-      text-align:center;
       font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
-      font-size: 28px;
+      font-size: 52px;     /* matches your mock better than the huge version */
+      line-height: 1.02;
       font-weight: 800;
+      text-align: center;
+      margin: 18px 0 16px;
     }
-    .info p{
-      margin: 0;
-      text-align:center;
+
+    .subheadline{
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.2;
+      color: var(--yellow);
+      font-size: 22px;
       font-weight: 700;
+      text-align: center;
+      margin: 0 0 22px;
+      line-height: 1.15;
     }
 
-    /* RIGHT IMAGE */
+    .cta-wrap{
+      display: flex;
+      justify-content: center;
+      margin: 0 0 18px;
+    }
+
+    .cta-btn{
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      padding: 18px 46px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 20px;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+      display: inline-block;
+    }
+
+    /* spacer pushes info box down WITHOUT affecting image */
+    .spacer{ flex: 1; }
+
+    .info{
+      background: var(--infoYellow);
+      padding: 22px 24px 26px;
+      margin: 18px 0 0;
+    }
+
+    .info h3{
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: 30px;
+      font-weight: 900;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+
+    .info p{
+      font-family: Georgia, "Times New Roman", serif;
+      color: #0b1f2a;
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    /* RIGHT IMAGE PANEL */
     .right{
-  background: var(--cream);
-  overflow: hidden;
-  height: 100%;
-}
+      overflow: hidden;
+      background: var(--cream);
+    }
 
-.right img{
-  width: 100%;
-  height: 520px;          /* lock the image height to match the hero */
-  object-fit: cover;      /* fills without stretching */
-  object-position: 60% center;* keeps the subject centered */
-  display: block;
-}
+    .right img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; /* can tweak if you want */
+    }
 
-    /* ===== RESPONSIVE (still keeps same vibe) ===== */
-    @media (max-width: 900px){
-      .topbar-right{
-        font-size: 22px;
-      }
-      .brand span{
-        font-size: 26px;
-      }
-      .hero-grid{
-        grid-template-columns: 1fr;
-      }
-      .headline{
-        font-size: 44px;
-      }
-      .right{
-        height: 320px;
-      }
-      .left{
-        padding: 34px 18px 0;
-      }
+    /* ===== MOBILE ===== */
+    @media (max-width: 980px){
+      .topbar-inner{ padding: 0 16px; }
+      .topbar-right{ font-size: 24px; white-space: normal; }
+      .brand-text{ font-size: 30px; }
+      .hero-grid{ grid-template-columns: 1fr; min-height: auto; }
+      .right{ height: 340px; }
+      .left{ padding: 28px 18px 0; }
+      .headline{ font-size: 44px; }
     }
   </style>
 </head>
 
 <body>
-
   <!-- TOP BAR -->
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#">
-        <img src="images/logo.png" alt="charity: water logo" />
-        <span>charity: water</span>
+        <img class="brand-logo" src="images/logo.png" alt="charity: water logo">
+        <span class="brand-text">charity: water</span>
       </a>
 
       <div class="topbar-right">Join #,### generous college students</div>
     </div>
   </header>
 
-  <!-- MAIN HERO -->
-  <main class="main">
-    <div class="frame">
-      <section class="hero-grid">
+  <!-- HERO -->
+  <main class="hero">
+    <section class="hero-grid">
 
-        <!-- LEFT PANEL -->
-<div class="left">
-  <h1 class="headline">Build Our Future<br/>With Clean<br/>Water</h1>
+      <!-- LEFT PANEL -->
+      <div class="left">
+        <h1 class="headline">Build Our Future<br/>With Clean<br/>Water</h1>
 
-  <p class="subheadline">See that your gift changes lives around<br/>the world.</p>
+        <p class="subheadline">See that your gift changes lives around<br/>the world.</p>
 
-  <div class="cta-wrap">
-    <a class="cta-btn" href="#">Start Tracking Your<br/>Donation</a>
-  </div>
-
-  <!-- THIS LINE pushes the info box toward the bottom -->
-  <div style="flex:1;"></div>
-
-  <div class="info">
-    <h3>Did you know?</h3>
-    <p>
-      $100 gives a family of four permanent<br/>
-      access to clean and safe drinking water,<br/>
-      so even $10 today makes a real difference.
-    </p>
-  </div>
-</div>
-
-        <!-- RIGHT IMAGE -->
-        <div class="right">
-          <img src="images/kids.jpg" alt="Kids celebrating clean water" />
+        <div class="cta-wrap">
+          <a class="cta-btn" href="#">Start Tracking Your<br/>Donation</a>
         </div>
 
-      </section>
-    </div>
-  </main>
+        <div class="spacer"></div>
 
+        <div class="info">
+          <h3>Did you know?</h3>
+          <p>
+            $100 gives a family of four permanent<br/>
+            access to clean and safe drinking water,<br/>
+            so even $10 today makes a real difference.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="right">
+        <img src="images/kids.jpg" alt="Kids celebrating clean water">
+      </div>
+
+    </section>
+  </main>
 </body>
 </html>
